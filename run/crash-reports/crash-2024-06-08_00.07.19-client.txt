@@ -1,0 +1,134 @@
+---- Minecraft Crash Report ----
+// Surprise! Haha. Well, this is awkward.
+
+Time: 2024-06-08 00:07:19
+Description: keyPressed event handler
+
+java.lang.ArrayIndexOutOfBoundsException: Index 5 out of bounds for length 5
+	at us.gyatdevs.crashers.impl.Nuke1.onMethod(Nuke1.java:19)
+	at us.gyatdevs.crashers.CrashManager.handleMethod(CrashManager.java:43)
+	at net.minecraft.client.gui.screens.ChatScreen.handleChatInput(ChatScreen.java:225)
+	at net.minecraft.client.gui.screens.ChatScreen.keyPressed(ChatScreen.java:103)
+	at net.minecraft.client.KeyboardHandler.lambda$keyPress$5(KeyboardHandler.java:376)
+	at net.minecraft.client.gui.screens.Screen.wrapScreenError(Screen.java:429)
+	at net.minecraft.client.KeyboardHandler.keyPress(KeyboardHandler.java:369)
+	at net.minecraft.client.KeyboardHandler.lambda$setup$8(KeyboardHandler.java:454)
+	at net.minecraft.util.thread.BlockableEventLoop.execute(BlockableEventLoop.java:90)
+	at net.minecraft.client.KeyboardHandler.lambda$setup$9(KeyboardHandler.java:453)
+	at org.lwjgl.glfw.GLFWKeyCallbackI.callback(GLFWKeyCallbackI.java:44)
+	at org.lwjgl.system.JNI.invokeV(Native Method)
+	at org.lwjgl.glfw.GLFW.glfwPollEvents(GLFW.java:3403)
+	at com.mojang.blaze3d.systems.RenderSystem.pollEvents(RenderSystem.java:175)
+	at com.mojang.blaze3d.systems.RenderSystem.flipFrame(RenderSystem.java:184)
+	at com.mojang.blaze3d.platform.Window.updateDisplay(Window.java:271)
+	at net.minecraft.client.Minecraft.runTick(Minecraft.java:1143)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:710)
+	at net.minecraft.client.main.Main.main(Main.java:218)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Render thread
+Stacktrace:
+	at us.gyatdevs.crashers.impl.Nuke1.onMethod(Nuke1.java:19)
+	at us.gyatdevs.crashers.CrashManager.handleMethod(CrashManager.java:43)
+	at net.minecraft.client.gui.screens.ChatScreen.handleChatInput(ChatScreen.java:225)
+	at net.minecraft.client.gui.screens.ChatScreen.keyPressed(ChatScreen.java:103)
+	at net.minecraft.client.KeyboardHandler.lambda$keyPress$5(KeyboardHandler.java:376)
+	at net.minecraft.client.gui.screens.Screen.wrapScreenError(Screen.java:429)
+	at net.minecraft.client.KeyboardHandler.keyPress(KeyboardHandler.java:369)
+	at net.minecraft.client.KeyboardHandler.lambda$setup$8(KeyboardHandler.java:454)
+	at net.minecraft.util.thread.BlockableEventLoop.execute(BlockableEventLoop.java:90)
+	at net.minecraft.client.KeyboardHandler.lambda$setup$9(KeyboardHandler.java:453)
+	at org.lwjgl.glfw.GLFWKeyCallbackI.callback(GLFWKeyCallbackI.java:44)
+	at org.lwjgl.system.JNI.invokeV(Native Method)
+	at org.lwjgl.glfw.GLFW.glfwPollEvents(GLFW.java:3403)
+	at com.mojang.blaze3d.systems.RenderSystem.pollEvents(RenderSystem.java:175)
+	at com.mojang.blaze3d.systems.RenderSystem.flipFrame(RenderSystem.java:184)
+
+-- Affected screen --
+Details:
+	Screen name: net.minecraft.client.gui.screens.ChatScreen
+Stacktrace:
+	at net.minecraft.client.gui.screens.Screen.wrapScreenError(Screen.java:429)
+	at net.minecraft.client.KeyboardHandler.keyPress(KeyboardHandler.java:369)
+	at net.minecraft.client.KeyboardHandler.lambda$setup$8(KeyboardHandler.java:454)
+	at net.minecraft.util.thread.BlockableEventLoop.execute(BlockableEventLoop.java:90)
+	at net.minecraft.client.KeyboardHandler.lambda$setup$9(KeyboardHandler.java:453)
+	at org.lwjgl.glfw.GLFWKeyCallbackI.callback(GLFWKeyCallbackI.java:44)
+	at org.lwjgl.system.JNI.invokeV(Native Method)
+	at org.lwjgl.glfw.GLFW.glfwPollEvents(GLFW.java:3403)
+	at com.mojang.blaze3d.systems.RenderSystem.pollEvents(RenderSystem.java:175)
+	at com.mojang.blaze3d.systems.RenderSystem.flipFrame(RenderSystem.java:184)
+	at com.mojang.blaze3d.platform.Window.updateDisplay(Window.java:271)
+	at net.minecraft.client.Minecraft.runTick(Minecraft.java:1143)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:710)
+	at net.minecraft.client.main.Main.main(Main.java:218)
+
+-- Affected level --
+Details:
+	All players: 1 total; [LocalPlayer['iBuyPower_Xx'/162, l='ClientLevel', x=126.17, y=63.00, z=118.62]]
+	Chunk stats: 18225, 441
+	Level dimension: minecraft:overworld
+	Level spawn location: World: (145,93,17), Section: (at 1,13,1 in 9,5,1; chunk contains blocks 144,0,16 to 159,255,31), Region: (0,0; contains chunks 0,0 to 31,31, blocks 0,0,0 to 511,255,511)
+	Level time: 585929 game time, 43688 day time
+	Server brand: PaperSpigot
+	Server type: Non-integrated multiplayer server
+Stacktrace:
+	at net.minecraft.client.multiplayer.ClientLevel.fillReportDetails(ClientLevel.java:447)
+	at net.minecraft.client.Minecraft.fillReport(Minecraft.java:2263)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:727)
+	at net.minecraft.client.main.Main.main(Main.java:218)
+
+-- Last reload --
+Details:
+	Reload number: 1
+	Reload reason: initial
+	Finished: Yes
+	Packs: vanilla
+
+-- System Details --
+Details:
+	Minecraft Version: 1.20.1
+	Minecraft Version ID: 1.20.1
+	Operating System: Windows 11 (amd64) version 10.0
+	Java Version: 19.0.1, Oracle Corporation
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode, sharing), Oracle Corporation
+	Memory: 76043776 bytes (72 MiB) / 605028352 bytes (577 MiB) up to 2078277632 bytes (1982 MiB)
+	CPUs: 8
+	Processor Vendor: GenuineIntel
+	Processor Name: 11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz
+	Identifier: Intel64 Family 6 Model 140 Stepping 1
+	Microarchitecture: Tiger Lake
+	Frequency (GHz): 1.38
+	Number of physical packages: 1
+	Number of physical CPUs: 4
+	Number of logical CPUs: 8
+	Graphics card #0 name: Intel(R) Iris(R) Xe Graphics
+	Graphics card #0 vendor: Intel Corporation (0x8086)
+	Graphics card #0 VRAM (MB): 128.00
+	Graphics card #0 deviceId: 0x9a49
+	Graphics card #0 versionInfo: DriverVersion=31.0.101.5186
+	Memory slot #0 capacity (MB): 8192.00
+	Memory slot #0 clockSpeed (GHz): 3.20
+	Memory slot #0 type: DDR4
+	Virtual memory max (MB): 17654.78
+	Virtual memory used (MB): 11447.40
+	Swap memory total (MB): 9728.00
+	Swap memory used (MB): 1154.05
+	JVM Flags: 0 total; 
+	Launched Version: 1.20.1
+	Backend library: LWJGL version 3.3.1 build 7
+	Backend API: Intel(R) Iris(R) Xe Graphics GL version 3.2.0 - Build 31.0.101.5186, Intel
+	Window size: 958x981
+	GL Caps: Using framebuffer using OpenGL 3.2
+	GL debug messages: 
+	Using VBOs: Yes
+	Is Modded: Very likely; Client jar signature invalidated
+	Type: Client (map_client.txt)
+	Graphics mode: fast
+	Resource Packs: 
+	Current Language: en_us
+	CPU: 8x 11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz

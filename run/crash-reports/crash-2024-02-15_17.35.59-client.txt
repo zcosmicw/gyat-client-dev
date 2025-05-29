@@ -1,0 +1,142 @@
+---- Minecraft Crash Report ----
+// I let you down. Sorry :(
+
+Time: 2024-02-15 17:35:59
+Description: keyPressed event handler
+
+java.lang.IllegalArgumentException: adding container's parent to itself
+	at java.desktop/java.awt.Container.checkAddToSelf(Container.java:505)
+	at java.desktop/java.awt.Container.addImpl(Container.java:1118)
+	at java.desktop/java.awt.Container.add(Container.java:440)
+	at us.gyatdevs.gui.clickgui.ClickGui.initGui(CrashGui.java:49)
+	at us.gyatdevs.commands.impl.GuiCommand.onCommand(Gui.java:16)
+	at us.gyatdevs.commands.CommandManager.handleCommand(CommandManager.java:38)
+	at net.minecraft.client.gui.screens.ChatScreen.handleChatInput(ChatScreen.java:228)
+	at net.minecraft.client.gui.screens.ChatScreen.keyPressed(ChatScreen.java:103)
+	at net.minecraft.client.KeyboardHandler.lambda$keyPress$5(KeyboardHandler.java:376)
+	at net.minecraft.client.gui.screens.Screen.wrapScreenError(Screen.java:429)
+	at net.minecraft.client.KeyboardHandler.keyPress(KeyboardHandler.java:369)
+	at net.minecraft.client.KeyboardHandler.lambda$setup$8(KeyboardHandler.java:454)
+	at net.minecraft.util.thread.BlockableEventLoop.execute(BlockableEventLoop.java:90)
+	at net.minecraft.client.KeyboardHandler.lambda$setup$9(KeyboardHandler.java:453)
+	at org.lwjgl.glfw.GLFWKeyCallbackI.callback(GLFWKeyCallbackI.java:44)
+	at org.lwjgl.system.JNI.invokeV(Native Method)
+	at org.lwjgl.glfw.GLFW.glfwPollEvents(GLFW.java:3403)
+	at com.mojang.blaze3d.systems.RenderSystem.pollEvents(RenderSystem.java:175)
+	at com.mojang.blaze3d.systems.RenderSystem.flipFrame(RenderSystem.java:184)
+	at com.mojang.blaze3d.platform.Window.updateDisplay(Window.java:271)
+	at net.minecraft.client.Minecraft.runTick(Minecraft.java:1143)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:710)
+	at net.minecraft.client.main.Main.main(Main.java:218)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Render thread
+Stacktrace:
+	at java.desktop/java.awt.Container.checkAddToSelf(Container.java:505)
+	at java.desktop/java.awt.Container.addImpl(Container.java:1118)
+	at java.desktop/java.awt.Container.add(Container.java:440)
+	at us.gyatdevs.gui.clickgui.ClickGui.initGui(CrashGui.java:49)
+	at us.gyatdevs.commands.impl.GuiCommand.onCommand(Gui.java:16)
+	at us.gyatdevs.commands.CommandManager.handleCommand(CommandManager.java:38)
+	at net.minecraft.client.gui.screens.ChatScreen.handleChatInput(ChatScreen.java:228)
+	at net.minecraft.client.gui.screens.ChatScreen.keyPressed(ChatScreen.java:103)
+	at net.minecraft.client.KeyboardHandler.lambda$keyPress$5(KeyboardHandler.java:376)
+	at net.minecraft.client.gui.screens.Screen.wrapScreenError(Screen.java:429)
+	at net.minecraft.client.KeyboardHandler.keyPress(KeyboardHandler.java:369)
+	at net.minecraft.client.KeyboardHandler.lambda$setup$8(KeyboardHandler.java:454)
+	at net.minecraft.util.thread.BlockableEventLoop.execute(BlockableEventLoop.java:90)
+	at net.minecraft.client.KeyboardHandler.lambda$setup$9(KeyboardHandler.java:453)
+	at org.lwjgl.glfw.GLFWKeyCallbackI.callback(GLFWKeyCallbackI.java:44)
+	at org.lwjgl.system.JNI.invokeV(Native Method)
+	at org.lwjgl.glfw.GLFW.glfwPollEvents(GLFW.java:3403)
+	at com.mojang.blaze3d.systems.RenderSystem.pollEvents(RenderSystem.java:175)
+	at com.mojang.blaze3d.systems.RenderSystem.flipFrame(RenderSystem.java:184)
+
+-- Affected screen --
+Details:
+	Screen name: net.minecraft.client.gui.screens.ChatScreen
+Stacktrace:
+	at net.minecraft.client.gui.screens.Screen.wrapScreenError(Screen.java:429)
+	at net.minecraft.client.KeyboardHandler.keyPress(KeyboardHandler.java:369)
+	at net.minecraft.client.KeyboardHandler.lambda$setup$8(KeyboardHandler.java:454)
+	at net.minecraft.util.thread.BlockableEventLoop.execute(BlockableEventLoop.java:90)
+	at net.minecraft.client.KeyboardHandler.lambda$setup$9(KeyboardHandler.java:453)
+	at org.lwjgl.glfw.GLFWKeyCallbackI.callback(GLFWKeyCallbackI.java:44)
+	at org.lwjgl.system.JNI.invokeV(Native Method)
+	at org.lwjgl.glfw.GLFW.glfwPollEvents(GLFW.java:3403)
+	at com.mojang.blaze3d.systems.RenderSystem.pollEvents(RenderSystem.java:175)
+	at com.mojang.blaze3d.systems.RenderSystem.flipFrame(RenderSystem.java:184)
+	at com.mojang.blaze3d.platform.Window.updateDisplay(Window.java:271)
+	at net.minecraft.client.Minecraft.runTick(Minecraft.java:1143)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:710)
+	at net.minecraft.client.main.Main.main(Main.java:218)
+
+-- Affected level --
+Details:
+	All players: 3 total; [LocalPlayer['iBuyPower_Xx'/255, l='ClientLevel', x=-308.95, y=51.00, z=-706.59], RemotePlayer['purpur120'/230, l='ClientLevel', x=-308.50, y=51.00, z=-697.50], RemotePlayer['purpur116'/233, l='ClientLevel', x=-312.53, y=51.00, z=-697.53]]
+	Chunk stats: 18225, 440
+	Level dimension: minecraft:overworld
+	Level spawn location: World: (-311,51,-708), Section: (at 9,3,12 in -20,3,-45; chunk contains blocks -320,0,-720 to -305,255,-705), Region: (-1,-2; contains chunks -32,-64 to -1,-33, blocks -512,0,-1024 to -1,255,-513)
+	Level time: 25044257 game time, 1000 day time
+	Server brand: PaperSpigot (Velocity)
+	Server type: Non-integrated multiplayer server
+Stacktrace:
+	at net.minecraft.client.multiplayer.ClientLevel.fillReportDetails(ClientLevel.java:447)
+	at net.minecraft.client.Minecraft.fillReport(Minecraft.java:2261)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:727)
+	at net.minecraft.client.main.Main.main(Main.java:218)
+
+-- Last reload --
+Details:
+	Reload number: 1
+	Reload reason: initial
+	Finished: Yes
+	Packs: vanilla
+
+-- System Details --
+Details:
+	Minecraft Version: 1.20.1
+	Minecraft Version ID: 1.20.1
+	Operating System: Windows 11 (amd64) version 10.0
+	Java Version: 19.0.1, Oracle Corporation
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode, sharing), Oracle Corporation
+	Memory: 162918000 bytes (155 MiB) / 434110464 bytes (414 MiB) up to 2078277632 bytes (1982 MiB)
+	CPUs: 8
+	Processor Vendor: GenuineIntel
+	Processor Name: 11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz
+	Identifier: Intel64 Family 6 Model 140 Stepping 1
+	Microarchitecture: Tiger Lake
+	Frequency (GHz): 1.38
+	Number of physical packages: 1
+	Number of physical CPUs: 4
+	Number of logical CPUs: 8
+	Graphics card #0 name: Intel(R) Iris(R) Xe Graphics
+	Graphics card #0 vendor: Intel Corporation (0x8086)
+	Graphics card #0 VRAM (MB): 1024.00
+	Graphics card #0 deviceId: 0x9a49
+	Graphics card #0 versionInfo: DriverVersion=31.0.101.4502
+	Memory slot #0 capacity (MB): 8192.00
+	Memory slot #0 clockSpeed (GHz): 3.20
+	Memory slot #0 type: DDR4
+	Virtual memory max (MB): 18678.78
+	Virtual memory used (MB): 12627.36
+	Swap memory total (MB): 10752.00
+	Swap memory used (MB): 1513.91
+	JVM Flags: 0 total; 
+	Launched Version: 1.20.1
+	Backend library: LWJGL version 3.3.1 build 7
+	Backend API: Intel(R) Iris(R) Xe Graphics GL version 3.2.0 - Build 31.0.101.4502, Intel
+	Window size: 1920x991
+	GL Caps: Using framebuffer using OpenGL 3.2
+	GL debug messages: 
+	Using VBOs: Yes
+	Is Modded: Very likely; Client jar signature invalidated
+	Type: Client (map_client.txt)
+	Graphics mode: fast
+	Resource Packs: 
+	Current Language: en_us
+	CPU: 8x 11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz

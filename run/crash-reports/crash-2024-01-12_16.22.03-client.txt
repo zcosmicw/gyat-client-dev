@@ -1,0 +1,240 @@
+---- Minecraft Crash Report ----
+// Who set us up the TNT?
+
+Time: 2024-01-12 16:22:03
+Description: Initializing game
+
+java.lang.RuntimeException: Exception in Application start method
+	at com.sun.javafx.application.LauncherImpl.launchApplication1(LauncherImpl.java:901)
+	at com.sun.javafx.application.LauncherImpl.lambda$launchApplication$2(LauncherImpl.java:196)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Caused by: java.lang.NullPointerException
+	at java.base/java.util.Objects.requireNonNull(Objects.java:233)
+	at us.gyatdevs.gui.hud.HudGui.start(HudGui.java:34)
+	at com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$9(LauncherImpl.java:847)
+	at com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:484)
+	at com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:457)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:456)
+	at com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:96)
+	at com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184)
+	... 1 more
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Render thread
+Stacktrace:
+	at com.sun.javafx.application.LauncherImpl.launchApplication1(LauncherImpl.java:901)
+	at com.sun.javafx.application.LauncherImpl.lambda$launchApplication$2(LauncherImpl.java:196)
+
+-- Initialization --
+Details:
+	Modules: 
+		ADVAPI32.dll:Advanced Windows 32 Base API:10.0.26028.1000 (WinBuild.160101.0800):Microsoft Corporation
+		COMCTL32.dll:Biblioteka formantów czynności użytkownika:6.10 (WinBuild.160101.0800):Microsoft Corporation
+		COMDLG32.dll:Plik DLL wspólnych okien dialogowych:10.0.26028.1000 (WinBuild.160101.0800):Microsoft Corporation
+		CRYPT32.dll:Crypto API32:10.0.26028.1000 (WinBuild.160101.0800):Microsoft Corporation
+		CRYPTBASE.dll:Base cryptographic API DLL:10.0.26020.1000 (WinBuild.160101.0800):Microsoft Corporation
+		CRYPTSP.dll:Cryptographic Service Provider API:10.0.26020.1000 (WinBuild.160101.0800):Microsoft Corporation
+		CoreMessaging.dll:Microsoft CoreMessaging Dll:10.0.26020.1000 (WinBuild.160101.0800):Microsoft Corporation
+		CoreUIComponents.dll:Microsoft Core UI Components Dll:10.0.26020.1000:Microsoft Corporation
+		DBGHELP.DLL:Windows Image Helper:10.0.26020.1000 (WinBuild.160101.0800):Microsoft Corporation
+		DEVOBJ.dll:Device Information Set DLL:10.0.26020.1000 (WinBuild.160101.0800):Microsoft Corporation
+		DNSAPI.dll:Biblioteka DLL interfejsu API klienta usługi DNS:10.0.26028.1000 (WinBuild.160101.0800):Microsoft Corporation
+		GDI32.dll:GDI Client DLL:10.0.26020.1000 (WinBuild.160101.0800):Microsoft Corporation
+		GLU32.dll:Biblioteka DLL OpenGL Utility Library:10.0.26028.1000 (WinBuild.160101.0800):Microsoft Corporation
+		IMM32.DLL:Multi-User Windows IMM32 API Client DLL:10.0.26020.1000 (WinBuild.160101.0800):Microsoft Corporation
+		IPHLPAPI.DLL:IP Helper API:10.0.26020.1000 (WinBuild.160101.0800):Microsoft Corporation
+		KERNEL32.DLL:Biblioteka DLL klienta Windows NT BASE API:10.0.26020.1000 (WinBuild.160101.0800):Microsoft Corporation
+		KERNELBASE.dll:Biblioteka DLL klienta Windows NT BASE API:10.0.26020.1000 (WinBuild.160101.0800):Microsoft Corporation
+		MMDevApi.dll:Interfejs API MMDevice:10.0.26028.1000 (WinBuild.160101.0800):Microsoft Corporation
+		MSASN1.dll:ASN.1 Runtime APIs:10.0.26020.1000 (WinBuild.160101.0800):Microsoft Corporation
+		MSCTF.dll:Biblioteka DLL serwera MSCTF:10.0.26028.1000 (WinBuild.160101.0800):Microsoft Corporation
+		NSI.dll:NSI User-mode interface DLL:10.0.26020.1000 (WinBuild.160101.0800):Microsoft Corporation
+		NTASN1.dll:Microsoft ASN.1 API:10.0.26020.1000 (WinBuild.160101.0800):Microsoft Corporation
+		OLEAUT32.dll:OLEAUT32.DLL:10.0.26020.1000 (WinBuild.160101.0800):Microsoft Corporation
+		Ole32.dll:Microsoft OLE for Windows:10.0.26028.1000 (WinBuild.160101.0800):Microsoft Corporation
+		OpenAL.dll:Main implementation library:1.21.1:
+		PSAPI.DLL:Process Status Helper:10.0.26020.1000 (WinBuild.160101.0800):Microsoft Corporation
+		Pdh.dll:Windows Performance Data Helper DLL:10.0.26020.1000 (WinBuild.160101.0800):Microsoft Corporation
+		RPCRT4.dll:Czas wykonania zdalnego wywoływania procedury:10.0.26028.1000 (WinBuild.160101.0800):Microsoft Corporation
+		SHCORE.dll:SHCORE:10.0.26028.1000 (WinBuild.160101.0800):Microsoft Corporation
+		SHELL32.dll:Wspólna biblioteka DLL Powłoki systemu Windows:10.0.26028.1000 (WinBuild.160101.0800):Microsoft Corporation
+		UMPDC.dll:User Mode Power Dependency Coordinator:10.0.26020.1000 (WinBuild.160101.0800):Microsoft Corporation
+		USER32.dll:Współużytkowana biblioteka DLL klienta Windows USER API:10.0.26028.1000 (WinBuild.160101.0800):Microsoft Corporation
+		USERENV.dll:Userenv:10.0.26028.1000 (WinBuild.160101.0800):Microsoft Corporation
+		VCRUNTIME140.dll:Microsoft® C Runtime Library:14.31.31103.0:Microsoft Corporation
+		VERSION.dll:Version Checking and File Installation Libraries:10.0.26020.1000 (WinBuild.160101.0800):Microsoft Corporation
+		WINHTTP.dll:Usługi Windows HTTP Services:10.0.26028.1000 (WinBuild.160101.0800):Microsoft Corporation
+		WINMM.dll:MCI API DLL:10.0.26028.1000 (WinBuild.160101.0800):Microsoft Corporation
+		WINTRUST.dll:Microsoft Trust Verification APIs:10.0.26020.1000 (WinBuild.160101.0800):Microsoft Corporation
+		WS2_32.dll:Biblioteka DLL 32-bitowej wersji usługi Windows Socket 2.0:10.0.26028.1000 (WinBuild.160101.0800):Microsoft Corporation
+		WSOCK32.dll:Windows Socket 32-Bit DLL:10.0.26028.1000 (WinBuild.160101.0800):Microsoft Corporation
+		amsi.dll:Anti-Malware Scan Interface:10.0.26020.1000 (WinBuild.160101.0800):Microsoft Corporation
+		api-ms-win-core-console-l1-1-0.dll:ApiSet Stub DLL:10.0.17763.132 (WinBuild.160101.0800):Microsoft Corporation
+		api-ms-win-core-console-l1-2-0.dll:ApiSet Stub DLL:10.0.17763.132 (WinBuild.160101.0800):Microsoft Corporation
+		api-ms-win-core-datetime-l1-1-0.dll:ApiSet Stub DLL:10.0.17763.132 (WinBuild.160101.0800):Microsoft Corporation
+		api-ms-win-core-debug-l1-1-0.dll:ApiSet Stub DLL:10.0.17763.132 (WinBuild.160101.0800):Microsoft Corporation
+		api-ms-win-core-errorhandling-l1-1-0.dll:ApiSet Stub DLL:10.0.17763.132 (WinBuild.160101.0800):Microsoft Corporation
+		api-ms-win-core-file-l1-1-0.dll:ApiSet Stub DLL:10.0.17763.132 (WinBuild.160101.0800):Microsoft Corporation
+		api-ms-win-core-file-l1-2-0.dll:ApiSet Stub DLL:10.0.17763.132 (WinBuild.160101.0800):Microsoft Corporation
+		api-ms-win-core-file-l2-1-0.dll:ApiSet Stub DLL:10.0.17763.132 (WinBuild.160101.0800):Microsoft Corporation
+		api-ms-win-core-handle-l1-1-0.dll:ApiSet Stub DLL:10.0.17763.132 (WinBuild.160101.0800):Microsoft Corporation
+		api-ms-win-core-heap-l1-1-0.dll:ApiSet Stub DLL:10.0.17763.132 (WinBuild.160101.0800):Microsoft Corporation
+		api-ms-win-core-interlocked-l1-1-0.dll:ApiSet Stub DLL:10.0.17763.132 (WinBuild.160101.0800):Microsoft Corporation
+		api-ms-win-core-libraryloader-l1-1-0.dll:ApiSet Stub DLL:10.0.17763.132 (WinBuild.160101.0800):Microsoft Corporation
+		api-ms-win-core-localization-l1-2-0.dll:ApiSet Stub DLL:10.0.17763.132 (WinBuild.160101.0800):Microsoft Corporation
+		api-ms-win-core-memory-l1-1-0.dll:ApiSet Stub DLL:10.0.17763.132 (WinBuild.160101.0800):Microsoft Corporation
+		api-ms-win-core-namedpipe-l1-1-0.dll:ApiSet Stub DLL:10.0.17763.132 (WinBuild.160101.0800):Microsoft Corporation
+		api-ms-win-core-processenvironment-l1-1-0.dll:ApiSet Stub DLL:10.0.17763.132 (WinBuild.160101.0800):Microsoft Corporation
+		api-ms-win-core-processthreads-l1-1-0.dll:ApiSet Stub DLL:10.0.17763.132 (WinBuild.160101.0800):Microsoft Corporation
+		api-ms-win-core-processthreads-l1-1-1.dll:ApiSet Stub DLL:10.0.17763.132 (WinBuild.160101.0800):Microsoft Corporation
+		api-ms-win-core-profile-l1-1-0.dll:ApiSet Stub DLL:10.0.17763.132 (WinBuild.160101.0800):Microsoft Corporation
+		api-ms-win-core-rtlsupport-l1-1-0.dll:ApiSet Stub DLL:10.0.17763.132 (WinBuild.160101.0800):Microsoft Corporation
+		api-ms-win-core-string-l1-1-0.dll:ApiSet Stub DLL:10.0.17763.132 (WinBuild.160101.0800):Microsoft Corporation
+		api-ms-win-core-synch-l1-1-0.dll:ApiSet Stub DLL:10.0.17763.132 (WinBuild.160101.0800):Microsoft Corporation
+		api-ms-win-core-synch-l1-2-0.dll:ApiSet Stub DLL:10.0.17763.132 (WinBuild.160101.0800):Microsoft Corporation
+		api-ms-win-core-sysinfo-l1-1-0.dll:ApiSet Stub DLL:10.0.17763.132 (WinBuild.160101.0800):Microsoft Corporation
+		api-ms-win-core-timezone-l1-1-0.dll:ApiSet Stub DLL:10.0.17763.132 (WinBuild.160101.0800):Microsoft Corporation
+		api-ms-win-core-util-l1-1-0.dll:ApiSet Stub DLL:10.0.17763.132 (WinBuild.160101.0800):Microsoft Corporation
+		api-ms-win-crt-conio-l1-1-0.dll:ApiSet Stub DLL:10.0.17763.132 (WinBuild.160101.0800):Microsoft Corporation
+		api-ms-win-crt-convert-l1-1-0.dll:ApiSet Stub DLL:10.0.17763.132 (WinBuild.160101.0800):Microsoft Corporation
+		api-ms-win-crt-environment-l1-1-0.dll:ApiSet Stub DLL:10.0.17763.132 (WinBuild.160101.0800):Microsoft Corporation
+		api-ms-win-crt-filesystem-l1-1-0.dll:ApiSet Stub DLL:10.0.17763.132 (WinBuild.160101.0800):Microsoft Corporation
+		api-ms-win-crt-heap-l1-1-0.dll:ApiSet Stub DLL:10.0.17763.132 (WinBuild.160101.0800):Microsoft Corporation
+		api-ms-win-crt-locale-l1-1-0.dll:ApiSet Stub DLL:10.0.17763.132 (WinBuild.160101.0800):Microsoft Corporation
+		api-ms-win-crt-math-l1-1-0.dll:ApiSet Stub DLL:10.0.17763.132 (WinBuild.160101.0800):Microsoft Corporation
+		api-ms-win-crt-multibyte-l1-1-0.dll:ApiSet Stub DLL:10.0.17763.132 (WinBuild.160101.0800):Microsoft Corporation
+		api-ms-win-crt-private-l1-1-0.dll:ApiSet Stub DLL:10.0.17763.132 (WinBuild.160101.0800):Microsoft Corporation
+		api-ms-win-crt-process-l1-1-0.dll:ApiSet Stub DLL:10.0.17763.132 (WinBuild.160101.0800):Microsoft Corporation
+		api-ms-win-crt-runtime-l1-1-0.dll:ApiSet Stub DLL:10.0.17763.132 (WinBuild.160101.0800):Microsoft Corporation
+		api-ms-win-crt-stdio-l1-1-0.dll:ApiSet Stub DLL:10.0.17763.132 (WinBuild.160101.0800):Microsoft Corporation
+		api-ms-win-crt-string-l1-1-0.dll:ApiSet Stub DLL:10.0.17763.132 (WinBuild.160101.0800):Microsoft Corporation
+		api-ms-win-crt-time-l1-1-0.dll:ApiSet Stub DLL:10.0.17763.132 (WinBuild.160101.0800):Microsoft Corporation
+		api-ms-win-crt-utility-l1-1-0.dll:ApiSet Stub DLL:10.0.17763.132 (WinBuild.160101.0800):Microsoft Corporation
+		bcrypt.dll:Biblioteka podstawowych elementów kryptograficznych systemu Windows:10.0.26028.1000 (WinBuild.160101.0800):Microsoft Corporation
+		bcryptPrimitives.dll:Windows Cryptographic Primitives Library:10.0.26020.1000 (WinBuild.160101.0800):Microsoft Corporation
+		cfgmgr32.dll:Configuration Manager DLL:10.0.26020.1000 (WinBuild.160101.0800):Microsoft Corporation
+		clbcatq.dll:COM+ Configuration Catalog:2001.12.10941.16384 (WinBuild.160101.0800):Microsoft Corporation
+		combase.dll:Microsoft COM for Windows:10.0.26028.1000 (WinBuild.160101.0800):Microsoft Corporation
+		d3d9.dll:Direct3D 9 Runtime:10.0.26020.1000 (WinBuild.160101.0800):Microsoft Corporation
+		dbgcore.DLL:Windows Core Debugging Helpers:10.0.26020.1000 (WinBuild.160101.0800):Microsoft Corporation
+		dhcpcsvc.DLL:Usługa klienta DHCP:10.0.26028.1000 (WinBuild.160101.0800):Microsoft Corporation
+		dhcpcsvc6.DLL:Klient DHCPv6:10.0.26028.1000 (WinBuild.160101.0800):Microsoft Corporation
+		dinput8.dll:Microsoft DirectInput:10.0.26028.1000 (WinBuild.160101.0800):Microsoft Corporation
+		directxdatabasehelper.dll:DirectXDatabaseHelper:10.0.26020.1000 (WinBuild.160101.0800):Microsoft Corporation
+		dwmapi.dll:Interfejs API menedżera okien Microsoft Desktop Window Manager:10.0.26028.1000 (WinBuild.160101.0800):Microsoft Corporation
+		dxcore.dll:DXCore:10.0.26020.1000 (WinBuild.160101.0800):Microsoft Corporation
+		dxgi.dll:DirectX Graphics Infrastructure:10.0.26020.1000 (WinBuild.160101.0800):Microsoft Corporation
+		eamsi.dll:ESET Antimalware Scan Interface DLL:10.36.10.0 BETA:ESET
+		extnet.dll:OpenJDK Platform binary:19.0.1.0:Oracle Corporation
+		fwpuclnt.dll:Interfejs API trybu użytkownika funkcji FWP/IPSec:10.0.26028.1000 (WinBuild.160101.0800):Microsoft Corporation
+		gdi32full.dll:GDI Client DLL:10.0.26020.1000 (WinBuild.160101.0800):Microsoft Corporation
+		glass.dll:OpenJFX Platform binary:18:N/A
+		glfw.dll:GLFW 3.4.0 DLL:3.4.0:GLFW
+		iertutil.dll:Narzędzie czasu wykonywania programu Internet Explorer:11.00.26028.1000 (WinBuild.160101.0800):Microsoft Corporation
+		igc64.dll:Intel Graphics Shader Compiler for Intel(R) Graphics Accelerator:31.0.101.4502:Intel Corporation
+		igdgmm64.dll:User Mode Driver for Intel(R) Graphics Technology:31.0.101.4502:Intel Corporation
+		igdml64.dll:Metrics Library for Intel(R) Graphics Technology:31.0.101.4502:Intel Corporation
+		igxelpicd64.dll:OpenGL(R) Driver for Intel(R) Graphics Accelerator:31.0.101.4502:Intel Corporation
+		inputhost.dll:InputHost:10.0.26020.1000 (WinBuild.160101.0800):Microsoft Corporation
+		java.dll:OpenJDK Platform binary:19.0.1.0:Oracle Corporation
+		java.exe:OpenJDK Platform binary:19.0.1.0:Oracle Corporation
+		javafx_font.dll:OpenJFX Platform binary:18:N/A
+		jemalloc.dll
+		jimage.dll:OpenJDK Platform binary:19.0.1.0:Oracle Corporation
+		jli.dll:OpenJDK Platform binary:19.0.1.0:Oracle Corporation
+		jna7289362221480497388.dll:JNA native library:6.1.4:Java(TM) Native Access (JNA)
+		jsvml.dll:OpenJDK Platform binary:19.0.1.0:Oracle Corporation
+		jvm.dll:OpenJDK 64-Bit server VM:19.0.1.0:Oracle Corporation
+		kernel.appcore.dll:AppModel API Host:10.0.26020.1000 (WinBuild.160101.0800):Microsoft Corporation
+		lwjgl.dll
+		lwjgl_opengl.dll
+		management.dll:OpenJDK Platform binary:19.0.1.0:Oracle Corporation
+		management_ext.dll:OpenJDK Platform binary:19.0.1.0:Oracle Corporation
+		msvcp140.dll:Microsoft® C Runtime Library:14.31.31103.0:Microsoft Corporation
+		msvcp140.dll:Microsoft® C Runtime Library:14.28.29914.0 built by: vcwrkspc:Microsoft Corporation
+		msvcp_win.dll:Microsoft® C Runtime Library:10.0.26020.1000 (WinBuild.160101.0800):Microsoft Corporation
+		msvcrt.dll:Windows NT CRT DLL:7.0.26020.1000 (WinBuild.160101.0800):Microsoft Corporation
+		mswsock.dll:Microsoft Windows Sockets 2.0 Dostawca usługi:10.0.26028.1000 (WinBuild.160101.0800):Microsoft Corporation
+		napinsp.dll:Dostawca podkładek nazewnictwa poczty e-mail:10.0.26028.1000 (WinBuild.160101.0800):Microsoft Corporation
+		ncrypt.dll:Router programu NCrypt w systemie Windows:10.0.26028.1000 (WinBuild.160101.0800):Microsoft Corporation
+		net.dll:OpenJDK Platform binary:19.0.1.0:Oracle Corporation
+		nio.dll:OpenJDK Platform binary:19.0.1.0:Oracle Corporation
+		nlansp_c.dll:NLA Namespace Service Provider DLL:10.0.26020.1000 (WinBuild.160101.0800):Microsoft Corporation
+		ntdll.dll:Biblioteka NT Layer DLL:10.0.26020.1000 (WinBuild.160101.0800):Microsoft Corporation
+		opengl32.dll:OpenGL Client DLL:10.0.26020.1000 (WinBuild.160101.0800):Microsoft Corporation
+		perfos.dll:Biblioteka DLL obiektów wydajności systemu Windows:10.0.26028.1000 (WinBuild.160101.0800):Microsoft Corporation
+		pfclient.dll:SysMain Client:10.0.26020.1000 (WinBuild.160101.0800):Microsoft Corporation
+		powrprof.dll:Pomocnicza biblioteka DLL dla profilu zasilania:10.0.26028.1000 (WinBuild.160101.0800):Microsoft Corporation
+		prism_d3d.dll:OpenJFX Platform binary:18:N/A
+		profapi.dll:User Profile Basic API:10.0.26020.1000 (WinBuild.160101.0800):Microsoft Corporation
+		rasadhlp.dll:Remote Access AutoDial Helper:10.0.26020.1000 (WinBuild.160101.0800):Microsoft Corporation
+		rsaenh.dll:Microsoft Enhanced Cryptographic Provider:10.0.26020.1000 (WinBuild.160101.0800):Microsoft Corporation
+		sechost.dll:Host for SCM/SDDL/LSA Lookup APIs:10.0.26020.1000 (WinBuild.160101.0800):Microsoft Corporation
+		shlwapi.dll:Biblioteka dodatkowych narzędzi powłoki:10.0.26028.1000 (WinBuild.160101.0800):Microsoft Corporation
+		sunmscapi.dll:OpenJDK Platform binary:19.0.1.0:Oracle Corporation
+		textinputframework.dll:"TextInputFramework.DYNLINK":10.0.26020.1000 (WinBuild.160101.0800):Microsoft Corporation
+		ucrtbase.dll:Microsoft® C Runtime Library:10.0.26020.1000 (WinBuild.160101.0800):Microsoft Corporation
+		ucrtbase.dll:Microsoft® C Runtime Library:10.0.17763.132 (WinBuild.160101.0800):Microsoft Corporation
+		urlmon.dll:Rozszerzenia OLE32 dla Win32:11.00.26028.1000 (WinBuild.160101.0800):Microsoft Corporation
+		uxtheme.dll:Biblioteka Microsoft UxTheme:10.0.26028.1000 (WinBuild.160101.0800):Microsoft Corporation
+		vcruntime140.dll:Microsoft® C Runtime Library:14.28.29914.0 built by: vcwrkspc:Microsoft Corporation
+		vcruntime140_1.dll:Microsoft® C Runtime Library:14.31.31103.0:Microsoft Corporation
+		vcruntime140_1.dll:Microsoft® C Runtime Library:14.28.29914.0 built by: vcwrkspc:Microsoft Corporation
+		verify.dll:OpenJDK Platform binary:19.0.1.0:Oracle Corporation
+		win32u.dll:Win32u:10.0.26020.1000 (WinBuild.160101.0800):Microsoft Corporation
+		windows.staterepositorycore.dll:Windows StateRepository API Core:10.0.26020.1000 (WinBuild.160101.0800):Microsoft Corporation
+		windows.storage.dll:Interfejs API magazynu systemu Microsoft WinRT:10.0.26028.1000 (WinBuild.160101.0800):Microsoft Corporation
+		winrnr.dll:LDAP RnR Provider DLL:10.0.26020.1000 (WinBuild.160101.0800):Microsoft Corporation
+		wintypes.dll:Biblioteka DLL typów systemu Windows:10.0.26028.1000 (WinBuild.160101.0800):Microsoft Corporation
+		wshbth.dll:Windows Sockets Helper DLL:10.0.26020.1000 (WinBuild.160101.0800):Microsoft Corporation
+		xinput1_4.dll:Interfejs API typowego kontrolera firmy Microsoft:10.0.26028.1000 (WinBuild.160101.0800):Microsoft Corporation
+		zip.dll:OpenJDK Platform binary:19.0.1.0:Oracle Corporation
+Stacktrace:
+	at net.minecraft.client.main.Main.main(Main.java:189)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.20.1
+	Minecraft Version ID: 1.20.1
+	Operating System: Windows 11 (amd64) version 10.0
+	Java Version: 19.0.1, Oracle Corporation
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode, sharing), Oracle Corporation
+	Memory: 271864040 bytes (259 MiB) / 434110464 bytes (414 MiB) up to 2078277632 bytes (1982 MiB)
+	CPUs: 8
+	Processor Vendor: GenuineIntel
+	Processor Name: 11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz
+	Identifier: Intel64 Family 6 Model 140 Stepping 1
+	Microarchitecture: Tiger Lake
+	Frequency (GHz): 1.38
+	Number of physical packages: 1
+	Number of physical CPUs: 4
+	Number of logical CPUs: 8
+	Graphics card #0 name: Intel(R) Iris(R) Xe Graphics
+	Graphics card #0 vendor: Intel Corporation (0x8086)
+	Graphics card #0 VRAM (MB): 1024.00
+	Graphics card #0 deviceId: 0x9a49
+	Graphics card #0 versionInfo: DriverVersion=31.0.101.4502
+	Memory slot #0 capacity (MB): 8192.00
+	Memory slot #0 clockSpeed (GHz): 3.20
+	Memory slot #0 type: DDR4
+	Virtual memory max (MB): 17251.91
+	Virtual memory used (MB): 9578.52
+	Swap memory total (MB): 9325.13
+	Swap memory used (MB): 504.90
+	JVM Flags: 0 total; 
+	Launched Version: 1.20.1
+	Backend library: LWJGL version 3.3.1 build 7
+	Backend API: Intel(R) Iris(R) Xe Graphics GL version 3.2.0 - Build 31.0.101.4502, Intel
+	Window size: <not initialized>
+	GL Caps: Using framebuffer using OpenGL 3.2
+	GL debug messages: 
+	Using VBOs: Yes
+	Is Modded: Very likely; Client jar signature invalidated
+	Type: Client (map_client.txt)
+	CPU: 8x 11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz
