@@ -1,4 +1,4 @@
-# CrashClient
+# GYATClient
 
 A custom-built Minecraft 1.20.1 client created for server stress testing, backend performance validation, and exploit research in controlled environments.
 
