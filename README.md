@@ -6,13 +6,13 @@ A custom-built Minecraft 1.20.1 client created for server stress testing, backen
 
 ## 🔧 Overview
 
-CrashClient is a lightweight utility client that prioritizes speed and efficiency for Minecraft server diagnostics. Designed for developers and testers who need to simulate high-load scenarios or evaluate plugin behavior under pressure.
+GYATClient is a lightweight utility client that prioritizes speed and efficiency for Minecraft server diagnostics. Designed for developers and testers who need to simulate high-load scenarios or evaluate plugin behavior under pressure.
 
 ---
 
 ## 📋 Prerequisites
 
-To run CrashClient, ensure you have the following installed:
+To run GYATClient, ensure you have the following installed:
 
 - **Java Development Kit 18 (JDK 18)**
 - **Gradle** (or use the included Gradle wrapper)
